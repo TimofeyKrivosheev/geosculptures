@@ -45,8 +45,14 @@
         text-transform: uppercase;
     }
 
-    /* ---------- Кнопка языка ---------- */
-    #lang-toggle {
+    .toc-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    /* ---------- Кнопки ---------- */
+    #lang-toggle,
+    #nav-toggle {
         background: transparent;
         color: #e8eaf6;
         border: 1px solid #6c5ce7;
@@ -60,14 +66,16 @@
         min-width: 70px;
     }
 
-    #lang-toggle:hover {
+    #lang-toggle:hover,
+    #nav-toggle:hover {
         background: #6c5ce7;
         color: #fff;
         transform: translateY(-2px);
         box-shadow: 0 6px 15px rgba(108, 92, 231, 0.5);
     }
 
-    #lang-toggle:active {
+    #lang-toggle:active,
+    #nav-toggle:active {
         transform: translateY(0);
     }
 
@@ -76,6 +84,10 @@
         display: flex;
         flex-wrap: wrap;
         gap: 15px;
+    }
+
+    .toc ul.hidden {
+        display: none;
     }
 
     .toc a {
@@ -126,7 +138,7 @@
     section img {
         width: 100%;
         max-width: 700px;
-		max-height: 1000px;
+        max-height: 1000px;
         display: block;
         margin: 0 auto 20px;
         border-radius: 12px;
@@ -143,13 +155,16 @@
 </head>
 <body>
 
-    <!-- ================= ОГЛАВЛЕНИЕ + КНОПКА ================= -->
+    <!-- ================= ОГЛАВЛЕНИЕ + КНОПКИ ================= -->
     <nav class="toc">
         <div class="toc-header">
             <h2 data-ru="📖 Скульптуры Новосибирска" data-en="📖 Novosibirsk Sculptures">📖 Скульптуры Новосибирска</h2>
-            <button id="lang-toggle" onclick="toggleLang()">EN</button>
+            <div class="toc-buttons">
+                <button id="nav-toggle" onclick="toggleNav()">Скрыть меню</button>
+                <button id="lang-toggle" onclick="toggleLang()">EN</button>
+            </div>
         </div>
-        <ul>
+        <ul id="nav-list">
             <li><a href="#section1" data-ru="Фонтаны у ГПНТБ" data-en="Fountains at SPSTL">Фонтаны у ГПНТБ</a></li>
             <li><a href="#section2" data-ru="Лента Мёбиуса" data-en="Möbius Strip">Лента Мёбиуса</a></li>
             <li><a href="#section3" data-ru="Памятник первого свидания" data-en="First Date Monument">Памятник первого свидания</a></li>
@@ -180,7 +195,7 @@
         <section id="section1">
             <h2 data-ru="Фонтаны у ГПНТБ" data-en="Fountains at SPSTL">Фонтаны у ГПНТБ</h2>
             <img src="img/sn1.jpg" alt="Фонтаны у ГПНТБ" data-alt-ru="Фонтаны у ГПНТБ" data-alt-en="Fountains at SPSTL">
-			<img src="img/p1.jpg" alt="Фонтаны у ГПНТБ" data-alt-ru="Фонтаны у ГПНТБ" data-alt-en="Fountains at SPSTL">
+            <img src="img/p1.jpg" alt="Фонтаны у ГПНТБ" data-alt-ru="Фонтаны у ГПНТБ" data-alt-en="Fountains at SPSTL">
             <p data-ru="У фонтана Обь(4) начнется путешествие по удивительному миру скульптур Новосибирска. На карте выше вы сможете увидеть точки, по которым необходимо пройти. Не забывайте, что также можете сами воспользоваться картой у себя в телефоне!"
                data-en="The journey through the amazing world of Novosibirsk sculptures begins at the Ob(4) fountain. On the map above you can see the points you need to visit. Don't forget that you can also use the map on your phone!">
             </p>
@@ -190,7 +205,7 @@
         <section id="section2">
             <h2 data-ru="Лента Мёбиуса" data-en="Möbius Strip">Лента Мёбиуса</h2>
             <img src="img/sn1.jpg" alt="Лента Мёбиуса" data-alt-ru="Лента Мёбиуса" data-alt-en="Möbius Strip">
-			<img src="img/p2.jpg" alt="Лента Мёбиуса" data-alt-ru="Лента Мёбиуса" data-alt-en="Möbius Strip">
+            <img src="img/p2.jpg" alt="Лента Мёбиуса" data-alt-ru="Лента Мёбиуса" data-alt-en="Möbius Strip">
             <p data-ru="Скульптура «Лента Мёбиуса» установлена на Аллее Учителя в 2023 году ко Дню учителя. Она символизирует бесконечность процесса познания, науку и математику. На неё нанесены математические формулы и надпись «Учитель — профессия далёкого действия!»."
                data-en="The “Möbius Strip” sculpture was installed on Teachers' Alley in 2023 for Teacher's Day. It symbolizes the infinity of the cognition process, science and mathematics. Mathematical formulas and the inscription “Teacher is a profession of far-reaching action!” are applied to it.">
             </p>
@@ -200,7 +215,7 @@
         <section id="section3">
             <h2 data-ru="Памятник первого свидания" data-en="First Date Monument">Памятник первого свидания</h2>
             <img src="img/sn1.jpg" alt="Памятник первого свидания" data-alt-ru="Памятник первого свидания" data-alt-en="First Date Monument">
-			<img src="img/p3.jpg" alt="Памятник первого свидания" data-alt-ru="Памятник первого свидания" data-alt-en="First Date Monument">
+            <img src="img/p3.jpg" alt="Памятник первого свидания" data-alt-ru="Памятник первого свидания" data-alt-en="First Date Monument">
             <p data-ru="Трогательный памятник стоит возле ГПНТБ, в сквере. Мужчина и женщина выполнены в натуральную величину."
                data-en="A touching monument stands near the SPSTL, in the square. The man and woman are made life-size.">
             </p>
@@ -210,7 +225,7 @@
         <section id="section4">
             <h2 data-ru="Пизанская башня" data-en="Leaning Tower of Pisa">Пизанская башня</h2>
             <img src="img/sn2.jpg" alt="Пизанская башня" data-alt-ru="Пизанская башня" data-alt-en="Leaning Tower of Pisa">
-			<img src="img/p4.jpg" alt="Пизанская башня" data-alt-ru="Пизанская башня" data-alt-en="Leaning Tower of Pisa">
+            <img src="img/p4.jpg" alt="Пизанская башня" data-alt-ru="Пизанская башня" data-alt-en="Leaning Tower of Pisa">
             <p data-ru="Скульптура почти настоящей Пизанской башни появилась в Новосибирске в 2011 году, который был объявлен годом Италии в России. Высота скульптуры — два с половиной метра. Она объединила Новосибирск с Италией и американским городом Найлси, где тоже есть копия знаменитой башни."
                data-en="The sculpture of an almost real Leaning Tower of Pisa appeared in Novosibirsk in 2011, which was declared the Year of Italy in Russia. The height of the sculpture is two and a half meters. It connected Novosibirsk with Italy and the American city of Niles, which also has a copy of the famous tower.">
             </p>
@@ -220,7 +235,7 @@
         <section id="section5">
             <h2 data-ru="Кощей Бессмертный и Змей Горыныч" data-en="Koschei and Zmey Gorynych">Кощей Бессмертный и Змей Горыныч</h2>
             <img src="img/sn3.jpg" alt="Кощей Бессмертный и Змей Горыныч" data-alt-ru="Кощей Бессмертный и Змей Горыныч" data-alt-en="Koschei and Zmey Gorynych">
-			<img src="img/p5.jpg" alt="Кощей Бессмертный и Змей Горыныч" data-alt-ru="Кощей Бессмертный и Змей Горыныч" data-alt-en="Koschei and Zmey Gorynych">
+            <img src="img/p5.jpg" alt="Кощей Бессмертный и Змей Горыныч" data-alt-ru="Кощей Бессмертный и Змей Горыныч" data-alt-en="Koschei and Zmey Gorynych">
             <p data-ru="Памятник-фонтан, посвящённый сказочным персонажам: Кощею Бессмертному и Змею Горынычу. На каменной скале возвышается фигура трёхголового дракона – Змея Горыныча. В лапах он держит каменный трон, на котором восседает худощавая фигура Кощея Бессмертного."
                data-en="A fountain monument dedicated to fairy-tale characters: Koschei the Deathless and Zmey Gorynych. On a stone rock rises the figure of a three-headed dragon – Zmey Gorynych. In its paws it holds a stone throne, on which sits the thin figure of Koschei the Deathless.">
             </p>
@@ -230,7 +245,7 @@
         <section id="section6">
             <h2 data-ru="Первый светофор" data-en="First Traffic Light">Первый светофор</h2>
             <img src="img/sn4.jpg" alt="Первый светофор" data-alt-ru="Первый светофор" data-alt-en="First Traffic Light">
-			<img src="img/p6.jpg" alt="Первый светофор" data-alt-ru="Первый светофор" data-alt-en="First Traffic Light">
+            <img src="img/p6.jpg" alt="Первый светофор" data-alt-ru="Первый светофор" data-alt-en="First Traffic Light">
             <p data-ru="Первый в России памятник светофору расположен в Центральном районе Новосибирска, на пересечении улиц Сибревкома и Серебренниковской, возле старейшей в городе школы № 12 (На точке 4 вы можете увидеть статую с книгой). В этом месте в 1940-х годах был установлен первый светофор в Новосибирске."
                data-en="The first monument to a traffic light in Russia is located in the Central District of Novosibirsk, at the intersection of Sibrevkom and Serebrennikovskaya streets, near the oldest school in the city, No. 12 (At point 4 you can see a statue with a book). The first traffic light in Novosibirsk was installed here in the 1940s.">
             </p>
@@ -240,7 +255,7 @@
         <section id="section7">
             <h2 data-ru="Ангел, держащий Новосибирск" data-en="Angel Holding Novosibirsk">Ангел, держащий Новосибирск</h2>
             <img src="img/sn5.jpg" alt="Ангел, держащий Новосибирск" data-alt-ru="Ангел, держащий Новосибирск" data-alt-en="Angel Holding Novosibirsk">
-			<img src="img/p7.jpg" alt="Ангел, держащий Новосибирск" data-alt-ru="Ангел, держащий Новосибирск" data-alt-en="Angel Holding Novosibirsk">
+            <img src="img/p7.jpg" alt="Ангел, держащий Новосибирск" data-alt-ru="Ангел, держащий Новосибирск" data-alt-en="Angel Holding Novosibirsk">
             <p data-ru="На улице Свердлова, возле здания администрации, стоит небольшой Ангел-хранитель. Мраморный Ангел держит в руках глобус со схематичной картой Центрального района города. На ней изображены главные символы района: Краеведческий музей, Центральная часовня, собор Александра Невского и театр «Глобус»."
                data-en="On Sverdlova Street, near the administration building, stands a small Guardian Angel. The marble Angel holds a globe with a schematic map of the Central District of the city. It depicts the main symbols of the district: the Local History Museum, the Central Chapel, St. Alexander Nevsky Cathedral and the Globus Theater.">
             </p>
@@ -250,7 +265,7 @@
         <section id="section8">
             <h2 data-ru="Скульптура у Глобуса" data-en="Sculpture at Globus">Скульптура у Глобуса</h2>
             <img src="img/sn6.jpg" alt="Скульптура у Глобуса" data-alt-ru="Скульптура у Глобуса" data-alt-en="Sculpture at Globus">
-			<img src="img/p8.jpg" alt="Скульптура у Глобуса" data-alt-ru="Скульптура у Глобуса" data-alt-en="Sculpture at Globus">
+            <img src="img/p8.jpg" alt="Скульптура у Глобуса" data-alt-ru="Скульптура у Глобуса" data-alt-en="Sculpture at Globus">
             <p data-ru="В сквере у театра «Глобус» установлена скульптура «Лежачая абстракция», на это стоит посмотреть!"
                data-en="In the square near the Globus Theater, the sculpture “Lying Abstraction” is installed, it's worth seeing!">
             </p>
@@ -260,7 +275,7 @@
         <section id="section9">
             <h2 data-ru="Владимир Высоцкий" data-en="Vladimir Vysotsky">Владимир Высоцкий</h2>
             <img src="img/sn7.jpg" alt="Владимир Высоцкий" data-alt-ru="Владимир Высоцкий" data-alt-en="Vladimir Vysotsky">
-			<img src="img/p9.jpg" alt="Владимир Высоцкий" data-alt-ru="Владимир Высоцкий" data-alt-en="Vladimir Vysotsky">
+            <img src="img/p9.jpg" alt="Владимир Высоцкий" data-alt-ru="Владимир Высоцкий" data-alt-en="Vladimir Vysotsky">
             <p data-ru="Памятник Владимиру Высоцкому открыт 25 июля 2005 года у театра «Глобус», в 25-ю годовщину смерти поэта. Общая высота памятника — шесть метров. Бронзовая фигура Высоцкого изображена с голым торсом, в джинсах и босиком, с гитарой в руках."
                data-en="The monument to Vladimir Vysotsky was unveiled on July 25, 2005, near the Globus Theater, on the 25th anniversary of the poet's death. The total height of the monument is six meters. The bronze figure of Vysotsky is depicted with a bare torso, in jeans and barefoot, with a guitar in his hands.">
             </p>
@@ -270,7 +285,7 @@
         <section id="section10">
             <h2 data-ru="Аисты" data-en="Storks">Аисты</h2>
             <img src="img/sn8.jpg" alt="Аисты" data-alt-ru="Аисты" data-alt-en="Storks">
-			<img src="img/p10.jpg" alt="Аисты" data-alt-ru="Аисты" data-alt-en="Storks">
+            <img src="img/p10.jpg" alt="Аисты" data-alt-ru="Аисты" data-alt-en="Storks">
             <p data-ru="Скульптурная композиция «Счастье строится» в виде двух аистов, занятых строительством гнезда, была установлена на пересечении Красного проспекта и Октябрьской магистрали в 2006 году. Она символизирует семейные ценности и является популярным местом у молодожёнов и влюблённых пар."
                data-en="The sculptural composition “Happiness is Being Built” in the form of two storks building a nest was installed at the intersection of Krasny Prospekt and Oktyabrskaya Magistral in 2006. It symbolizes family values and is a popular place for newlyweds and couples in love.">
             </p>
@@ -280,7 +295,7 @@
         <section id="section11">
             <h2 data-ru="Новосибирские соболи" data-en="Novosibirsk Sables">Новосибирские соболи</h2>
             <img src="img/sn9.jpg" alt="Новосибирские соболи" data-alt-ru="Новосибирские соболи" data-alt-en="Novosibirsk Sables">
-			<img src="img/p11.jpg" alt="Новосибирские соболи" data-alt-ru="Новосибирские соболи" data-alt-en="Novosibirsk Sables">
+            <img src="img/p11.jpg" alt="Новосибирские соболи" data-alt-ru="Новосибирские соболи" data-alt-en="Novosibirsk Sables">
             <p data-ru="Архитектурно-художественная композиция «Сибирские просторы» (в народе — «соболя») открыта 28 июня 2008 года на пересечении Красного проспекта и Октябрьской магистрали. Четыре соболя высотой 3,5 метра, стоя на задних лапах, поддерживают сложную техническую конструкцию с полусферой наверху, символизирующую купол театра оперы и балета и фрагмент первого моста через Обь."
                data-en="The architectural and artistic composition “Siberian Expanses” (popularly known as “sables”) was opened on June 28, 2008, at the intersection of Krasny Prospekt and Oktyabrskaya Magistral. Four sables 3.5 meters high, standing on their hind legs, support a complex technical structure with a hemisphere on top, symbolizing the dome of the Opera and Ballet Theater and a fragment of the first bridge over the Ob.">
             </p>
@@ -290,7 +305,7 @@
         <section id="section12">
             <h2 data-ru="Камень любви" data-en="Stone of Love">Камень любви</h2>
             <img src="img/sn10.jpg" alt="Камень любви" data-alt-ru="Камень любви" data-alt-en="Stone of Love">
-			<img src="img/p12.jpg" alt="Камень любви" data-alt-ru="Камень любви" data-alt-en="Stone of Love">
+            <img src="img/p12.jpg" alt="Камень любви" data-alt-ru="Камень любви" data-alt-en="Stone of Love">
             <p data-ru="Скульптура «Любовь» авторства Санду Бортника была установлена в Первомайском сквере в 2002 году. Каменное сердце стало настоящим народным памятником. Двадцать лет у камня фотографировались влюблённые и молодожёны."
                data-en="The sculpture “Love” by Sandu Bortnik was installed in Pervomaisky Square in 2002. The stone heart has become a real folk monument. For twenty years, lovers and newlyweds have been photographed at the stone.">
             </p>
@@ -300,7 +315,7 @@
         <section id="section13">
             <h2 data-ru="Фонтан с медведем" data-en="Bear Fountain">Фонтан с медведем</h2>
             <img src="img/sn11.jpg" alt="Фонтан с медведем" height="700" data-alt-ru="Фонтан с медведем" data-alt-en="Bear Fountain">
-			<img src="img/p13.jpg" alt="Фонтан с медведем" height="700" data-alt-ru="Фонтан с медведем" data-alt-en="Bear Fountain">
+            <img src="img/p13.jpg" alt="Фонтан с медведем" height="700" data-alt-ru="Фонтан с медведем" data-alt-en="Bear Fountain">
             <p data-ru="Фонтан «Мишка» появился в Первомайском сквере Новосибирска в 1960-е годы. Центральная фигура фонтана — медвежонок. За свою историю скульптура несколько раз менялась: сначала был деревянный медведь, затем бетонный, позже металлический. В 2024 году фонтан был отреставрирован."
                data-en="The “Mishka” fountain appeared in Pervomaisky Square in Novosibirsk in the 1960s. The central figure of the fountain is a bear cub. Over its history, the sculpture has changed several times: first a wooden bear, then a concrete one, later a metal one. In 2024, the fountain was restored.">
             </p>
@@ -310,7 +325,7 @@
         <section id="section14">
             <h2 data-ru="Арка «Я люблю Новосибирск»" data-en="I Love Novosibirsk Arch">Арка «Я люблю Новосибирск»</h2>
             <img src="img/sn12.jpg" alt="Арка «Я люблю Новосибирск»" data-alt-ru="Арка «Я люблю Новосибирск»" data-alt-en="I Love Novosibirsk Arch">
-			<img src="img/p14.jpg" alt="Арка «Я люблю Новосибирск»" data-alt-ru="Арка «Я люблю Новосибирск»" data-alt-en="I Love Novosibirsk Arch">
+            <img src="img/p14.jpg" alt="Арка «Я люблю Новосибирск»" data-alt-ru="Арка «Я люблю Новосибирск»" data-alt-en="I Love Novosibirsk Arch">
             <p data-ru="Арка с надписью «Я люблю Новосибирск» — популярное место для фотографий. Подобные арки установлены во многих городах России. Не забудьте сфотографироваться с ней!"
                data-en="The arch with the inscription “I Love Novosibirsk” is a popular photo spot. Similar arches are installed in many cities of Russia. Don't forget to take a photo with it!">
             </p>
@@ -320,7 +335,7 @@
         <section id="section15">
             <h2 data-ru="Трон" data-en="Throne">Трон</h2>
             <img src="img/sn13.jpg" alt="Трон" data-alt-ru="Трон" data-alt-en="Throne">
-			<img src="img/p15.jpg" alt="Трон" data-alt-ru="Трон" data-alt-en="Throne">
+            <img src="img/p15.jpg" alt="Трон" data-alt-ru="Трон" data-alt-en="Throne">
             <p data-ru="Памятник «Металлический Трон» появился в Новосибирске в 2009 году. Высокая металлическая конструкция в виде трона облеплена крошечными железными человечками – рабочими с молотками и ключами в руках."
                data-en="The “Metal Throne” monument appeared in Novosibirsk in 2009. The tall metal structure in the form of a throne is covered with tiny iron men – workers with hammers and wrenches in their hands.">
             </p>
@@ -330,7 +345,7 @@
         <section id="section16">
             <h2 data-ru="Арфа у НОВАТа" data-en="Harp at NOVAT">Арфа у НОВАТа</h2>
             <img src="img/sn14.jpg" alt="Арфа у НОВАТа" data-alt-ru="Арфа у НОВАТа" data-alt-en="Harp at NOVAT">
-			<img src="img/p16.jpg" alt="Арфа у НОВАТа" data-alt-ru="Арфа у НОВАТа" data-alt-en="Harp at NOVAT">
+            <img src="img/p16.jpg" alt="Арфа у НОВАТа" data-alt-ru="Арфа у НОВАТа" data-alt-en="Harp at NOVAT">
             <p data-ru="Памятник Арфе расположен недалеко от НОВАТа, если присмотреться рядом можно найти клавиши пианино."
                data-en="The Harp monument is located near NOVAT; if you look closely, you can find piano keys nearby.">
             </p>
@@ -340,7 +355,7 @@
         <section id="section17">
             <h2 data-ru="Деловая женщина" data-en="Business Woman">Деловая женщина</h2>
             <img src="img/sn15.jpg" alt="Деловая женщина" data-alt-ru="Деловая женщина" data-alt-en="Business Woman">
-			<img src="img/p17.jpg" alt="Деловая женщина" data-alt-ru="Деловая женщина" data-alt-en="Business Woman">
+            <img src="img/p17.jpg" alt="Деловая женщина" data-alt-ru="Деловая женщина" data-alt-en="Business Woman">
             <p data-ru="Возле точки 3 вы можете спустьтся вниз к столовой 'Лаврушка'. Скульптура «Деловая женщина» установлена 30 декабря 2005 года. Проект был разработан по заказу компании «Граф». Композиция представляет современную бизнес-вумен в солидном костюме с большим портфелем, опирающуюся на рабочий стол. Местные жители называют её памятником секретарю или карьеристке."
                data-en="Near point 3, you can go down to the ‘Lavushka’ canteen. The sculpture “Business Woman” was installed on December 30, 2005. The project was developed by order of the “Graf” company. The composition represents a modern businesswoman in a solid suit with a large briefcase, leaning on a desk. Locals call it a monument to a secretary or a careerist.">
             </p>
@@ -350,7 +365,7 @@
         <section id="section18">
             <h2 data-ru="Фонтаны Центрального парка" data-en="Central Park Fountains">Фонтаны Центрального парка</h2>
             <img src="img/sn16.jpg" alt="Фонтаны Центрального парка" data-alt-ru="Фонтаны Центрального парка" data-alt-en="Central Park Fountains">
-			<img src="img/p18.jpg" alt="Фонтаны Центрального парка" data-alt-ru="Фонтаны Центрального парка" data-alt-en="Central Park Fountains">
+            <img src="img/p18.jpg" alt="Фонтаны Центрального парка" data-alt-ru="Фонтаны Центрального парка" data-alt-en="Central Park Fountains">
             <p data-ru="В Центральном парке Новосибирска работает светомузыкальный фонтан, запущенный в 2019 году. Он оснащён видео-лазерной установкой для проецирования изображения на водный экран и может воспроизводить звуковые и визуальные программы. 178 струй могут подниматься на высоту до 10 метров. Фонтан был подарен городу Сбербанком."
                data-en="In the Central Park of Novosibirsk, there is a light and music fountain launched in 2019. It is equipped with a video-laser installation for projecting images onto a water screen and can play sound and visual programs. 178 jets can rise up to 10 meters high. The fountain was donated to the city by Sberbank.">
             </p>
@@ -360,7 +375,7 @@
         <section id="section19">
             <h2 data-ru="Телега с дровами" data-en="Cart with Firewood">Телега с дровами</h2>
             <img src="img/sn17.jpg" alt="Телега с дровами" data-alt-ru="Телега с дровами" data-alt-en="Cart with Firewood">
-			<img src="img/p19.jpg" alt="Телега с дровами" data-alt-ru="Телега с дровами" data-alt-en="Cart with Firewood">
+            <img src="img/p19.jpg" alt="Телега с дровами" data-alt-ru="Телега с дровами" data-alt-en="Cart with Firewood">
             <p data-ru="По пути к следующей композиции посмотрите на телегу с дровами."
                data-en="On the way to the next composition, look at the cart with firewood.">
             </p>
@@ -370,7 +385,7 @@
         <section id="section20">
             <h2 data-ru="Сцена покупки" data-en="Purchase scene">Сцена покупки</h2>
             <img src="img/sn18.jpg" alt="Сцена покупки" data-alt-ru="Сцена покупки" data-alt-en="Purchase scene">
-			<img src="img/p20.jpg" alt="Сцена покупки" data-alt-ru="Сцена покупки" data-alt-en="Purchase scene">
+            <img src="img/p20.jpg" alt="Сцена покупки" data-alt-ru="Сцена покупки" data-alt-en="Purchase scene">
             <p data-ru="Памятник «Сцена покупки» (также известный как «Торговка, покупатель и собака») появился 26 июня 2011 года, возле Центрального рынка. Композиция выполнена из меди и железного сплава."
                data-en="The monument “Purchase scene” (also known as “Saleswoman, Buyer and Dog”) appeared on June 26, 2011, near the Central Market. The composition is made of copper and iron alloy.">
             </p>
@@ -386,6 +401,19 @@
     <script>
         // Текущий язык сайта
         var currentLang = 'ru';
+        // Состояние навигации: true — открыта, false — закрыта
+        var navOpen = true;
+
+        // Обновить текст кнопки навигации в зависимости от языка и состояния
+        function updateNavToggleText() {
+            var btn = document.getElementById('nav-toggle');
+            if (!btn) return;
+            if (currentLang === 'ru') {
+                btn.textContent = navOpen ? 'Скрыть меню' : 'Показать меню';
+            } else {
+                btn.textContent = navOpen ? 'Hide menu' : 'Show menu';
+            }
+        }
 
         // Применить язык
         function applyLang(lang) {
@@ -415,23 +443,42 @@
                 }
             });
 
-            // 5. Обновляем НАДПИСЬ на кнопке.
+            // 5. Обновляем НАДПИСЬ на кнопке языка.
             document.getElementById('lang-toggle').textContent =
                 (lang === 'ru') ? 'EN' : 'RU';
 
-            // 6. Сохраняем выбор
+            // 6. Обновляем текст кнопки навигации
+            updateNavToggleText();
+
+            // 7. Сохраняем выбор
             localStorage.setItem('siteLang', lang);
         }
 
-        // Клик по кнопке — переключаем язык
+        // Клик по кнопке языка — переключаем язык
         function toggleLang() {
             applyLang(currentLang === 'ru' ? 'en' : 'ru');
+        }
+
+        // Клик по кнопке навигации — открыть/закрыть меню
+        function toggleNav() {
+            navOpen = !navOpen;
+            var ul = document.getElementById('nav-list');
+            if (navOpen) {
+                ul.classList.remove('hidden');
+            } else {
+                ul.classList.add('hidden');
+            }
+            updateNavToggleText();
         }
 
         // При загрузке — восстанавливаем сохранённый язык
         window.addEventListener('DOMContentLoaded', function () {
             var saved = localStorage.getItem('siteLang') || 'ru';
             applyLang(saved);
+            // Навигация по умолчанию открыта
+            document.getElementById('nav-list').classList.remove('hidden');
+            navOpen = true;
+            updateNavToggleText();
         });
     </script>
 
